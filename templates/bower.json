@@ -1,0 +1,22 @@
+{
+  "name": "<%= appName %>",
+  "description": "<%= appDescription %>",
+  "main": "gulpfile.js",
+  "authors": [
+    "<%= authorName %> <%= authorEmail %>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "phaser": "~2.4.4"
+  }
+}
