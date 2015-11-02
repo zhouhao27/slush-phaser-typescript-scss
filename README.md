@@ -1,4 +1,4 @@
-# Slush Phaser-typescript-scss [![Build Status](https://secure.travis-ci.org/zhouhao/slush-phaser-typescript-scss.png?branch=master)](https://travis-ci.org/zhouhao/slush-phaser-typescript-scss) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-phaser-typescript-scss.png)](http://badges.enytc.com/for/npm/slush-phaser-typescript-scss)
+# Slush Phaser-typescript-scss 
 
 > The template for Phaser game with typescript and sass supports
 
