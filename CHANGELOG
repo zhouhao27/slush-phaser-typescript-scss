@@ -15,4 +15,8 @@ V0.1.2
   changes:
   	- watch assets folder
 
+V0.1.4
+  date: 2015-11-3
+  changes:
+    - rewrite gulp file to use del to fix the assets task issue
 
