@@ -3,6 +3,14 @@
 // showing splash if needed
 module States {
   export class BootState extends Phaser.State {
+
+    // setup the scale mode
+    init() {
+      this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+      this.scale.pageAlignHorizontally = true;
+      this.scale.pageAlignVertically = true;
+    }
+
     preload() {
       this.game.load.image('logo','assets/logo.png');
     }
