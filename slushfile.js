@@ -71,10 +71,6 @@ gulp.task('default', function (done) {
         message: 'What is the author email?',
         default: defaults.authorEmail
     }, {
-        name: 'userName',
-        message: 'What is the github username?',
-        default: defaults.userName
-    }, {
         type: 'confirm',
         name: 'moveon',
         message: 'Continue?'
