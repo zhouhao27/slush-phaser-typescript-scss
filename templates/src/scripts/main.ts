@@ -1,19 +1,14 @@
 /// <reference path="../libs/phaser/typescript/phaser.d.ts"/>
+/// <reference path="states/preload.ts"/>
 
-class Game {
+class Game extends Phaser.Game {
 
-    constructor() {
-        this.game = new Phaser.Game(800, 600, Phaser.AUTO, 'content', { create: this.create });
-    }
-
-    game: Phaser.Game;
-
-    create() {
-        var text = "Hello!";
-        var style = { font: "65px Arial", fill: "#ff0000", align: "center" };
-        this.game.add.text(0, 0, text, style);
-    }
+	constructor() {
+		//noinspection TypeScriptValidateTypes
+    super(800, 600, Phaser.AUTO, 'content', null);
+    this.state.add('preload',States.PreloadState,true);
+  }
 
 }
 
-var game = new Game();
+var mygame = new Game();
