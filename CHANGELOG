@@ -2,3 +2,11 @@ v0.1.0:
   date: 2015-11-2
   changes:
     - Initial release.
+
+V0.1.1
+  date: 2015-11-3
+  changes:
+  	- remove imagemin
+  	- add more states
+  	- change remote url
+
