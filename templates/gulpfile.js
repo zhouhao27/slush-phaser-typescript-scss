@@ -20,6 +20,7 @@ var scriptsSrc 	= './src/scripts/**/*.ts';
 var htmlSrc 	= ['./src/*.html','./src/templates/*.html'];
 var stylesSrc 	= './src/styles/**/*.scss';
 var phaserSrc	= './src/libs/phaser/build/phaser.min.js';
+var imgSrc 		= './src/assets/**/*';
 
 // browser sychnoization
 gulp.task('browserSync', function() {
@@ -51,11 +52,11 @@ gulp.task('jshint', function() {
 });
 
 // copy assets
-gulp.task('assets', function() {
-	var imgSrc = './src/assets/**/*',
-		imgDest = './build/assets/';
+gulp.task('assets', function() {	
+	var	imgDest = './build/assets/';
 
 	return gulp.src(imgSrc)
+		.pipe(changed(imgDest))
 		.pipe(gulp.dest(imgDest))
 		.pipe(browserSync.reload({stream : true}));
 });
@@ -105,6 +106,7 @@ gulp.task('build', ['jshint', 'copy', 'assets','html','scripts','styles','browse
 gulp.task('default', function(done) {
     runSequence('clean', 'build', function() {
 		gulp.watch(htmlSrc,['html']);
+		gulp.watch(imgSrc,['assets']);
 		gulp.watch(scriptsSrc, ['scripts']);
 		gulp.watch(stylesSrc, ['styles']);
         done();
