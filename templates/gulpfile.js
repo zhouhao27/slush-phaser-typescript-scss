@@ -3,7 +3,6 @@ var gulp = require('gulp');
 // plug-ins
 var jshint 		= require('gulp-jshint');
 var changed 	= require('gulp-changed');
-var imagemin 	= require('gulp-imagemin');
 var minifyHtml 	= require('gulp-minify-html');
 var concat 		= require('gulp-concat');
 var stripDebug 	= require('gulp-strip-debug');
@@ -51,18 +50,6 @@ gulp.task('jshint', function() {
 		.pipe(jshint.reporter('default'));
 });
 
-// minify new images
-gulp.task('imagemin', function() {
-	var imgSrc = './src/assets/**/*',
-		imgDest = './build/assets/';
-
-	return gulp.src(imgSrc)
-		.pipe(changed(imgDest))
-		.pipe(imagemin())
-		.pipe(gulp.dest(imgDest))
-		.pipe(browserSync.reload({stream : true}));
-});
-
 // minify html
 gulp.task('html', function() {
 	var htmlDest = './build';
@@ -101,7 +88,7 @@ gulp.task('styles', function() {
 });
 
 // build only
-gulp.task('build', ['jshint', 'copy', 'imagemin','html','scripts','styles','browserSync'], function() {
+gulp.task('build', ['jshint', 'copy','html','scripts','styles','browserSync'], function() {
 });
 
 // default task
