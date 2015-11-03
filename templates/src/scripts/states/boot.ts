@@ -1,10 +1,10 @@
 /// <reference path="../../libs/phaser/typescript/phaser.d.ts"/>
+/// <reference path="preload.ts"/>
+/// <reference path="play.ts"/>
 
-// showing splash if needed
 module States {
   export class BootState extends Phaser.State {
 
-    // setup the scale mode
     init() {
       this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
       this.scale.pageAlignHorizontally = true;
@@ -12,15 +12,15 @@ module States {
     }
 
     preload() {
-      this.game.load.image('logo','assets/logo.png');
+      this.game.load.image('progressBar','assets/images/progressbar.png');
+      this.game.load.image('logo', 'assets/images/logo.png');
+
+      this.game.state.add('preload',PreloadState);
+      this.game.state.add('play',PlayState);
     }
 
     create() {
-      var logo = this.game.add.image(this.game.width/2,this.game.height/2,'logo');
-      logo.anchor.set(0.5,0.5);
-      this.game.time.events.add(2000,()=>{
-        this.game.state.start('play');
-      },this);
+      this.game.state.start('preload'); 
     }
   }
 }

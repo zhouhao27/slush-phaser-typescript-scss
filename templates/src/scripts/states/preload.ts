@@ -1,20 +1,25 @@
 /// <reference path="../../libs/phaser/typescript/phaser.d.ts"/>
-/// <reference path="boot.ts"/>
 /// <reference path="play.ts"/>
 
-// load all the states
 module States {
 
   export class PreloadState extends Phaser.State {
 
-    preload() {
-      this.game.state.add('boot',BootState);
-      this.game.state.add('play',PlayState);
-    }
+	preload() {
+		var x = this.game.width / 2;
+		var y = this.game.height / 2;
 
-    create() {
-      this.game.state.start('boot');
-    }
+		var logo = this.game.add.sprite(x, y, 'logo');
+		logo.anchor.set(0.5);
 
-  }
+		var progressBar = this.game.add.sprite(x, y + 100, 'progressBar');
+		progressBar.anchor.set(0.5);
+		this.load.setPreloadSprite(progressBar);
+	}
+
+	create() {
+		this.game.time.events.add(2000, () => {
+			this.game.state.start('play');
+		}, this);
+	}
 }
