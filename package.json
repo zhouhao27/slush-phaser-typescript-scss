@@ -1,7 +1,7 @@
 {
     "name": "slush-phaser-typescript-scss",
     "description": "The template for Phaser game with typescript and sass supports",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "homepage": "https://github.com/zhouhao27/slush-phaser-typescript-scss",
     "author": {
         "name": "zhouhao",
@@ -29,7 +29,7 @@
         "gulp-template": "^0.1.1",
         "gulp-install": "^0.1.4",
         "gulp-conflict": "^0.1.1",
-        "gulp-rename": "^1.2.0",
+        "gulp-rename": "^1.2.0",        
         "underscore.string": "^2.3.3",
         "inquirer": "^0.8.0",
         "iniparser": "^1.0.5"

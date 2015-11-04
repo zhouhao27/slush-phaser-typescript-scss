@@ -1,7 +1,8 @@
 var gulp = require('gulp');
 
 // plug-ins
-var jshint 		= require('gulp-jshint');
+//var jshint 		= require('gulp-jshint');
+var tshint 		= require('gulp-tshint');
 var changed 	= require('gulp-changed');
 var minifyHtml 	= require('gulp-minify-html');
 var concat 		= require('gulp-concat');
@@ -54,10 +55,17 @@ gulp.task('copy', function() {
 });
 
 // JS hint task
-gulp.task('jshint', function() {
-	return gulp.src(srcs.scripts)
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'));
+// gulp.task('jshint', function() {
+// 	return gulp.src(srcs.scripts)
+// 		.pipe(jshint())
+// 		.pipe(jshint.reporter('default'));
+// });
+
+// TS hint task
+gulp.task('tslint', function(){
+      return gulp.src(srcs.scripts)
+        .pipe(tslint())
+        .pipe(tslint.report('verbose'));
 });
 
 // copy assets
@@ -106,7 +114,7 @@ gulp.task('styles', function() {
 });
 
 // build only
-gulp.task('build', ['jshint', 'copy', 'assets','html','scripts','styles','browserSync'], function() {
+gulp.task('build', ['tshint', 'copy', 'assets','html','scripts','styles','browserSync'], function() {
 });
 
 // default task
