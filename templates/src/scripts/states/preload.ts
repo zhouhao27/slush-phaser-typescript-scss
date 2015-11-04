@@ -22,4 +22,5 @@ module States {
 			this.game.state.start('play');
 		}, this);
 	}
+  }
 }
