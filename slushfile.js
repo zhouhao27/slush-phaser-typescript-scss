@@ -23,7 +23,7 @@ function format(string) {
     return username.replace(/\s/g, '');
 }
 
-var imgFilter = gulpFilter(['*', '!assets/'], { restore: true );
+var imgFilter = gulpFilter(['*', '!assets/'], { restore: true });
 
 var defaults = (function () {
     var workingDirName = path.basename(process.cwd()),
@@ -94,6 +94,7 @@ gulp.task('default', function (done) {
               }
           }))
           .pipe(conflict('./'))
+          .pipe(imgFilter.restore)
           .pipe(gulp.dest('./'))
           .pipe(install())
           .on('end', function () {
