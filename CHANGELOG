@@ -1,7 +1,22 @@
-v0.1.0:
-  date: 2015-11-2
+V0.1.13
+  date: 2016-02-15
   changes:
-    - Initial release.
+    - The image corruption issue fixed
+    
+V0.1.6
+  date: 2015-11-3
+  changes:
+    - Setup scale mode during boot
+
+V0.1.4
+  date: 2015-11-3
+  changes:
+    - rewrite gulp file to use del to fix the assets task issue
+
+V0.1.2
+  date: 2015-11-3
+  changes:
+  	- watch assets folder
 
 V0.1.1
   date: 2015-11-3
@@ -10,18 +25,9 @@ V0.1.1
   	- add more states
   	- change remote url
 
-V0.1.2
-  date: 2015-11-3
+v0.1.0:
+  date: 2015-11-2
   changes:
-  	- watch assets folder
+    - Initial release.
 
-V0.1.4
-  date: 2015-11-3
-  changes:
-    - rewrite gulp file to use del to fix the assets task issue
-
-V0.1.6
-  date: 2015-11-3
-  changes:
-    - Setup scale mode during boot
 
